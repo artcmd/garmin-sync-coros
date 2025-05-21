@@ -17,7 +17,7 @@ SYNC_CONFIG = {
     'GARMIN_AUTH_DOMAIN': '',
     'GARMIN_EMAIL': '',
     'GARMIN_PASSWORD': '',
-    'GARMIN_NEWEST_NUM': 10000,
+    'GARMIN_NEWEST_NUM': 1,
     "COROS_EMAIL": '',
     "COROS_PASSWORD": '',
 }
@@ -92,6 +92,7 @@ if __name__ == "__main__":
     try:
       client = None
       ## 中国区使用阿里云OSS
+      print('[I]', corosClient.regionId)
       if corosClient.regionId == 2:
          client = AliOssClient()
       elif corosClient.regionId == 1 or corosClient.regionId == 3:
